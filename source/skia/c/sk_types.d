@@ -10,39 +10,36 @@
 
 module skia.c.sk_types;
 
-extern (C):
-@nogc:
-nothrow:
-
-///////////////////////////////////////////////////////////////////////////////////////
+@safe pure nothrow @nogc pragma(inline, true):
 
 alias sk_color_t = uint;
 
-/* This macro assumes all arguments are >=0 and <=255. */
-extern (D) auto sk_color_set_argb(T0, T1, T2, T3)(auto ref T0 a, auto ref T1 r, auto ref T2 g, auto ref T3 b)
+sk_color_t sk_color_set_argb(ubyte a, ubyte r, ubyte g, ubyte b)
 {
     return (a << 24) | (r << 16) | (g << 8) | b;
 }
 
-extern (D) auto sk_color_get_a(T)(auto ref T c)
+ubyte sk_color_get_a(sk_color_t c)
 {
     return (c >> 24) & 0xFF;
 }
 
-extern (D) auto sk_color_get_r(T)(auto ref T c)
+ubyte sk_color_get_r(sk_color_t c)
 {
     return (c >> 16) & 0xFF;
 }
 
-extern (D) auto sk_color_get_g(T)(auto ref T c)
+ubyte sk_color_get_g(sk_color_t c)
 {
     return (c >> 8) & 0xFF;
 }
 
-extern (D) auto sk_color_get_b(T)(auto ref T c)
+ubyte sk_color_get_b(sk_color_t c)
 {
     return (c >> 0) & 0xFF;
 }
+
+extern (C):
 
 enum sk_cliptype_t
 {
@@ -248,6 +245,3 @@ enum sk_xfermode_mode_t
     COLOR_SK_XFERMODE_MODE = 27,
     LUMINOSITY_SK_XFERMODE_MODE = 28
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
