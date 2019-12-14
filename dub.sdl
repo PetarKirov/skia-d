@@ -1,0 +1,7 @@
+name "skia-d"
+description "D bindings for Skia"
+authors "zombinedev"
+copyright "Copyright © 2019, zombinedev"
+license "BSD"
+
+targetPath "build"
