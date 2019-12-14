@@ -1,0 +1,8 @@
+name "skia-d-c-api-example1"
+description "A minimal D application."
+authors "zombinedev"
+copyright "Copyright © 2019, zombinedev"
+license "BSD"
+targetPath "build"
+
+dependency "skia-d" path="../../../"

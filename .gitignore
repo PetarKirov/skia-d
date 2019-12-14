@@ -6,5 +6,7 @@ bin/
 build/
 *.exe
 *.o
+*.a
+*.so
 *.obj
 *.lst

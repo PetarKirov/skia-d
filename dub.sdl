@@ -5,3 +5,7 @@ copyright "Copyright © 2019, zombinedev"
 license "BSD"
 
 targetPath "build"
+targetType "library"
+
+libs "stdc++" platform="posix"
+sourceFiles "lib/libskia.a" platform="linux-x86_64"
